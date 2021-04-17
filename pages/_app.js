@@ -1,3 +1,4 @@
+import '../styles/style.css'
 import { Footer } from "../components/Footer";
 import { Navigation } from "../components/Navigation/Navigation";
 import { GlobalStyles } from "../styles/global";
