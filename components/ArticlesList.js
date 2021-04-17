@@ -27,9 +27,9 @@ export const ArticlesList = ({dataList,dataAuthors}) => {
   return (
     <Wrapper>
       <SectionHeader text="Aktualności" />
-      {/* <ArticlesGrid>
+      <ArticlesGrid>
         {data.map(article=><ArticleTile key={article.id} data={article} dataAuthors={dataAuthors}/>)}
-      </ArticlesGrid> */}
+      </ArticlesGrid>
     </Wrapper>
   );
 };

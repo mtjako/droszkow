@@ -75,12 +75,16 @@ export const ArticleTile = ({ data, dataAuthors }) => {
     <Link href={`/${data.full_slug}`}>
       <Wrapper>
         <WrapperImg>
-          {/* <Image
-            src={data.content.image.filename}
-            layout="fill"
-            objectFit="cover"
-            className="Image"
-          /> */}
+          {data.content.image?.filename ? (
+            <Image
+              src={data.content.image.filename}
+              layout="fill"
+              objectFit="cover"
+              className="Image"
+            />
+          ) : (
+            <p>OBRAZEK TYTUŁOWY</p>
+          )}
         </WrapperImg>
         <WrapperText>
           <WrapperTile>

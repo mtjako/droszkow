@@ -76,7 +76,7 @@ export default function Home({ story, preview }) {
   return (
     <>
       <Head>
-        <title>Droszków</title>
+        <title>Droszków - {story.content.title}</title>
         <link rel="icon" href="/favicon.png" />
         <meta
           property="og:url"
