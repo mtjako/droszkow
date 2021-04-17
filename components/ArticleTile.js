@@ -81,6 +81,7 @@ export const ArticleTile = ({ data, dataAuthors }) => {
               layout="fill"
               objectFit="cover"
               className="Image"
+              alt={data.content.title}
             />
           ) : (
             <p>OBRAZEK TYTUŁOWY</p>
@@ -98,6 +99,7 @@ export const ArticleTile = ({ data, dataAuthors }) => {
                 width={40}
                 height={40}
                 className="avatar"
+                alt="avatar autora"
               />
             </Avatar>
             <div className="text">

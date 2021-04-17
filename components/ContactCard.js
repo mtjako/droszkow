@@ -62,6 +62,7 @@ export const ContactCard = ({ card }) => {
           src={card.avatar.filename || "/user.svg"}
           width={40}
           height={40}
+          alt={card.name}
         />
       </Avatar>
       <Header>

@@ -46,7 +46,7 @@ const Overlay = styled.div`
 export const Hero = ({ blok }) => {
   return (
     <Wrapper>
-      <Image src={blok.Image.filename} layout="fill" objectFit="cover" className="Image"/>
+      <Image src={blok.Image.filename} layout="fill" objectFit="cover" className="Image" alt="panorama wsi"/>
       <Overlay/>
       <HeaderWrapper>
         <Header>{blok.Text}</Header>

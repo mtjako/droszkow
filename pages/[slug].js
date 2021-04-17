@@ -6,9 +6,6 @@ export default function Home({ story, preview }) {
   story = useStoryblok(story, preview);
   return (
     <>
-      <div>
-        <h1>{story ? story.name : "My Site"}</h1>
-      </div>
       <main>
       {story && story.content.body
           ? story.content.body.map((blok) => (

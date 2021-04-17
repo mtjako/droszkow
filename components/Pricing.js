@@ -87,6 +87,7 @@ export const Pricing = ({ blok }) => {
         width={976}
         height={288}
         className="Image"
+        alt="świetlica wiejska"
       />
       <TextWrap>
         <Title>{blok.title}</Title>
