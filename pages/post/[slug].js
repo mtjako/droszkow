@@ -72,7 +72,6 @@ export default function Home({ story, preview }) {
       ? "0" + (new Date(story.first_published_at).getMonth() + 1)
       : new Date(story.first_published_at).getMonth() + 1
   }.${new Date(story.first_published_at).getFullYear()}`;
-  console.log(story);
   return (
     <>
       <Head>
