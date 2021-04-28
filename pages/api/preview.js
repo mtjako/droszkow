@@ -1,5 +1,5 @@
 export default async function preview(req, res) {
-  if (req.query.secret !== process.env.MY_SECRET_TOKEN || !req.query.slug) {
+  if (req.query.secret !== process.env.STORYBLOK || !req.query.slug) {
     return res.status(401).json({ message: "Invalid token" });
   }
 

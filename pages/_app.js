@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }) {
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-QNYKK5K2KZ"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
         ></script>
         <script dangerouslySetInnerHTML={{__html: `
           window.dataLayer = window.dataLayer || [];
