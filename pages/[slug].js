@@ -1,11 +1,27 @@
 import Storyblok from "../lib/storyblok";
 import useStoryblok from "../lib/storyblok-hook";
 import DynamicComponent from "../components/DynamicComponent";
+import Head from "next/head";
 
 export default function Home({ story, preview }) {
   story = useStoryblok(story, preview);
+  console.log(story);
   return (
     <>
+      <Head>
+        <title>Droszków - {story.name}</title>
+        <link rel="icon" href="/favicon.png" />
+        <meta
+          property="og:url"
+          content={`https://droszkow.pl/${story.full_slug}`}
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={story.name} />
+        <meta property="og:image" content={'/heroimg.webp'} /> 
+        <meta property="og:description" content="Oficjalna strona Droszkowa" />
+        <meta name="description" content="Oficjalna strona Droszkowa" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <main>
       {story && story.content.body
           ? story.content.body.map((blok) => (
