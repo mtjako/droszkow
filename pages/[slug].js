@@ -7,20 +7,20 @@ export default function Home({ story, preview }) {
   story = useStoryblok(story, preview);
   return (
     <>
-      <Head>
-        <title>Droszków - {story.name}</title>
+      {/* <Head>
+        <title>Droszków - {story.name ? story.name : ''}</title>
         <link rel="icon" href="/favicon.png" />
         <meta
           property="og:url"
           content={`https://droszkow.pl/${story.full_slug}`}
         />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={story.name} />
+        <meta property="og:title" content={story.name ? story.name : ''} />
         <meta property="og:image" content={'/heroimg.webp'} /> 
         <meta property="og:description" content="Oficjalna strona Droszkowa" />
         <meta name="description" content="Oficjalna strona Droszkowa" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+      </Head> */}
       <main>
       {story && story.content.body
           ? story.content.body.map((blok) => (
