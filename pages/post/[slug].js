@@ -134,7 +134,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   let params = {
-    version: "draft", // or 'published'
+    version: "published", // or 'published'
   };
   let { data } = await Storyblok.get("cdn/links/?starts_with=post/", params);
   let paths = [];
