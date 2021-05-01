@@ -5,7 +5,6 @@ import Head from "next/head";
 
 export default function Home({ story, preview }) {
   story = useStoryblok(story, preview);
-  console.log(story);
   return (
     <>
       <Head>
