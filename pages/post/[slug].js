@@ -62,7 +62,7 @@ const Content = styled.div`
 
 export default function Home({ story, preview }) {
   story = useStoryblok(story, preview);
-  const date = `
+  const date = story && `
   ${
     new Date(story.first_published_at).getDate() < 10
       ? "0" + new Date(story.first_published_at).getDate()
@@ -75,22 +75,23 @@ export default function Home({ story, preview }) {
   return (
     <>
       <Head>
-        <title>Droszków - {story.content.title}</title>
+        <title>Droszków - {story && story.content.title}</title>
         <link rel="icon" href="/favicon.png" />
         <meta
           property="og:url"
-          content={`https://droszkow.pl/${story.full_slug}`}
+          content={`https://droszkow.pl/${story && story.full_slug}`}
         />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={story.content.title} />
-        <meta property="og:image" content={story.content.image ? story.content.image.filename : ''} /> 
+        <meta property="og:title" content={story && story.content.title} />
+        <meta property="og:image" content={story && (story.content.image ? story.content.image.filename : '')} /> 
         <meta property="og:description" content="Oficjalna strona Droszkowa" />
         <meta name="description" content="Oficjalna strona Droszkowa" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Wrapper>
-        <PublishedAt>{story.first_published_at ? date : "DATA"}</PublishedAt>
-        <Title>{story.content.title || 'TYTUŁ'}</Title>
+        <PublishedAt>{story && (story.first_published_at ? date : "DATA")}</PublishedAt>
+        <Title>{story && (story.content.title || 'TYTUŁ')}</Title>
+        {story && (
         <WrapperImg>
           {story.content.image?.filename ?
           <Image
@@ -100,11 +101,14 @@ export default function Home({ story, preview }) {
           />:
           <p>OBRAZEK TYTUŁOWY</p>}
         </WrapperImg>
+        )}
+        {story && (
         <Content
           dangerouslySetInnerHTML={{
             __html: story.content.long_text ? Storyblok.richTextResolver.render(story.content.long_text) : '<p>Treść posta...</p>',
           }}
         />
+        )}
       </Wrapper>
     </>
   );
@@ -148,6 +152,6 @@ export async function getStaticPaths() {
 
   return {
     paths: paths,
-    fallback: false,
+    fallback: true,
   };
 }
