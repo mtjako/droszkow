@@ -6,26 +6,37 @@ const Wrapper = styled.div`
   max-width: 1024px;
   padding: 24px;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  .Image {
-    width: 100%;
+  display: grid;
+  grid-column-gap: 24px;
+  grid-row-gap: 12px;
+  grid-template-columns: repeat(1, 1fr);
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
-const Title = styled.p`
-  font-size: 24px;
+const Title = styled.h3`
   padding: 16px 0;
-  font-weight: bold;
 `;
 
 const Description = styled.p`
   opacity: 0.8;
   font-weight: 600;
+  text-align: justify;
 `;
 
 const PriceList = styled.table`
-    width: calc(100% - 364px);
+  width: 100%;
+  grid-column: span 1;
+  @media (min-width: 600px) {
+    grid-column: span 2;
+  }
+  @media (min-width: 900px) {
+    grid-column: span 2;
+  }
   border-collapse: collapse;
   align-self: center;
   tr {
@@ -39,10 +50,10 @@ const PriceList = styled.table`
       @media (min-width: 800px) {
         text-align: left;
       }
-      font-weight: bold;
-      padding: 8px 12px;
-      font-size: 14px;
-      text-transform: uppercase;
+      padding: 4px 6px;
+      @media (min-width: 500px) {
+        padding: 8px 12px;
+      }
       transition: border 0.25s linear 0.25s;
       border-left: 4px solid #ccc;
       &:first-of-type {
@@ -73,22 +84,40 @@ const PriceList = styled.table`
 `;
 
 const TextWrap = styled.div`
-    width: 300px;
-    margin-right: 64px;
+  width: 100%;
+  grid-column: span 1;
+  @media (min-width: 600px) {
+    grid-column: span 2;
+  }
+  @media (min-width: 900px) {
+    grid-column: span 1;
+  }
+`;
+
+const ImageWrap = styled.div`
+  grid-column: span 1;
+  @media (min-width: 600px) {
+    grid-column: span 2;
+  }
+  @media (min-width: 900px) {
+    grid-column: span 3;
+  }
 `;
 
 export const Pricing = ({ blok }) => {
   return (
     <Wrapper>
-              <SectionHeader text="Świetlica Wiejska"/>
-             
-      <Image
-        src={blok.image.filename}
-        width={976}
-        height={288}
-        className="Image"
-        alt="świetlica wiejska"
-      />
+      <SectionHeader text="Świetlica Wiejska" />
+      <ImageWrap>
+        <Image
+          src={blok.image.filename}
+          width={976}
+          height={288}
+          className="Image"
+          alt="świetlica wiejska"
+        />
+      </ImageWrap>
+
       <TextWrap>
         <Title>{blok.title}</Title>
         <Description>{blok.description}</Description>
@@ -96,13 +125,17 @@ export const Pricing = ({ blok }) => {
       <PriceList>
         <tr>
           {blok.pricelist.thead.map((item, i) => (
-            <th key={i}>{item.value}</th>
+            <th className="hmeta" key={i}>
+              {item.value}
+            </th>
           ))}
         </tr>
         {blok.pricelist.tbody.map((item, i) => (
           <tr key={i}>
             {item.body.map((item, i) => (
-              <th key={i}>{item.value}</th>
+              <th className="meta" key={i}>
+                {item.value}
+              </th>
             ))}
           </tr>
         ))}

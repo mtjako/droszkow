@@ -17,14 +17,12 @@ const HeaderWrapper = styled.div`
   width: 100%;
 `;
 
-const Header = styled.p`
+const Header = styled.h1`
   width: 100%;
   display: block;
   max-width: 1024px;
   padding: 24px;
   margin: 0 auto;
-  font-size: 48px;
-  font-weight: bold;
   color: #eee;
 `;
 

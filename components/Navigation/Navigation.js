@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Logo } from "./Logo";
 import { ModeSwitch } from "./ModeSwitch";
+import {pallete} from "../../styles/theme";
 
 const Nav = styled.nav`
   width: 100%;
@@ -8,7 +9,7 @@ const Nav = styled.nav`
   line-height: 64px;
   color: #eee;
   font-weight: bold;
-  background-color: #000c;
+  background-color: ${pallete.grey900 + 'cc'};
   backdrop-filter: saturate(180%) blur(20px);
   position: sticky;
   top: 0;

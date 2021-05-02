@@ -4,6 +4,16 @@ export const lightTheme = {
   border: "#222",
   text: "#222",
   dot: "-5px",
+  "grey050": "#F7F7F7",
+  "grey100": "#E1E1E1",
+  "grey200": "#CFCFCF",
+  "grey300": "#B1B1B1",
+  "grey400": "#9E9E9E",
+  "grey500": "#7E7E7E",
+  "grey600": "#626262",
+  "grey700": "#515151",
+  "grey800": "#3B3B3B",
+  "grey900": "#222222",  
 };
 
 export const darkTheme = {
@@ -12,4 +22,27 @@ export const darkTheme = {
   border: "#eee",
   text: "#eee",
   dot: "15px",
+  "grey900": "#F7F7F7",
+  "grey800": "#E1E1E1",
+  "grey700": "#CFCFCF",
+  "grey600": "#B1B1B1",
+  "grey500": "#9E9E9E",
+  "grey400": "#7E7E7E",
+  "grey300": "#626262",
+  "grey200": "#515151",
+  "grey100": "#3B3B3B",
+  "grey050": "#222222",  
 };
+
+export const pallete = {
+  "grey050": "#F7F7F7",
+  "grey100": "#E1E1E1",
+  "grey200": "#CFCFCF",
+  "grey300": "#B1B1B1",
+  "grey400": "#9E9E9E",
+  "grey500": "#7E7E7E",
+  "grey600": "#626262",
+  "grey700": "#515151",
+  "grey800": "#3B3B3B",
+  "grey900": "#222222",  
+}

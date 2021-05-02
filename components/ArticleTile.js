@@ -16,15 +16,6 @@ const WrapperImg = styled.div`
 
 const WrapperTile = styled.div`
   padding: 24px;
-  p {
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: bold;
-    opacity: 0.8;
-  }
-  h3 {
-    font-size: 24px;
-  }
 `;
 
 const Avatar = styled.div`
@@ -42,10 +33,6 @@ const WrapperMeta = styled.div`
   padding: 0 24px 24px;
   position: relative;
   bottom: 0;
-  p {
-    font-weight: bold;
-    opacity: 0.8;
-  }
   div.text {
     width: calc(100% - 48px);
   }
@@ -89,7 +76,7 @@ export const ArticleTile = ({ data, dataAuthors }) => {
         </WrapperImg>
         <WrapperText>
           <WrapperTile>
-            <p>{data.content.category}</p>
+            <p className="hmeta">{data.content.category}</p>
             <h3>{data.content.title}</h3>
           </WrapperTile>
           <WrapperMeta>
@@ -103,8 +90,8 @@ export const ArticleTile = ({ data, dataAuthors }) => {
               />
             </Avatar>
             <div className="text">
-              <p>{theAuthor.name || "Author"}</p>
-              <p>{date}</p>
+              <p className="meta">{theAuthor.name || "Author"}</p>
+              <p className="meta">{date}</p>
             </div>
           </WrapperMeta>
         </WrapperText>

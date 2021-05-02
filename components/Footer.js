@@ -1,11 +1,13 @@
 import styled from "styled-components";
+import {pallete} from "../styles/theme";
 
 const Wrapper = styled.footer`
   width: 100%;
   height: 64px;
-  background-color: #000c;
-  color: #fff;
+  background-color: ${pallete.grey900};
+  color: ${pallete.grey100};
   line-height: 64px;
+  overflow: hidden;
 `;
 
 const InsideWrapper = styled.div`
@@ -32,7 +34,8 @@ const Overlay = styled.div`
 `;
 
 const Copyright = styled.p`
-  font-weight: bold;
+  font-weight: 600;
+  color: ${pallete.grey100} !important;
 `;
 
 const SocialBtn = styled.a`
@@ -60,7 +63,7 @@ export const Footer = () => {
       <Overlay />
       <Wrapper>
         <InsideWrapper>
-        <Copyright>&copy; {new Date().getFullYear()} Droszków Online</Copyright>
+        <Copyright className="hmeta">&copy; {new Date().getFullYear()} Droszków Online</Copyright>
         <div>
         <SocialBtn
             icon="facebook"

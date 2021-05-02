@@ -7,39 +7,22 @@ const Wrapper = styled.div`
   align-content: start;
 `;
 
-const Header = styled.div`
-  width: calc(100% - 48px);
-  font-weight: bold;
-  .name {
-  }
-  .rank {
-    opacity: 0.8;
-  }
-`;
+const Header = styled.div``;
 
 const Meta = styled.div`
   margin-top: 8px;
   width: 100%;
-  opacity: 0.64;
   font-weight: 600;
-  p {
+  div {
     display: flex;
     align-items: center;
-    padding: 4px 0;
-    &::before {
-      content: "";
-      display: block;
+    p {
+      padding: 4px 0;
+    }
+    img {
       width: 20px;
       height: 20px;
       margin: 0 8px 0 20px;
-      background-repeat: no-repeat;
-      background-size: 20px;
-    }
-    &.phone::before {
-      background-image: url("./icon-phone-ring.svg");
-    }
-    &.email::before {
-      background-image: url("./icon-mail.svg");
     }
   }
 `;
@@ -66,13 +49,28 @@ export const ContactCard = ({ card }) => {
         />
       </Avatar>
       <Header>
-        <p className="name">{card.name}</p>
-        <p className="rank">{card.rank}</p>
+        <p className="hmeta">{card.name}</p>
+        <p className="meta">{card.rank}</p>
       </Header>
       <Meta>
-        {card.email ? <p className="email">{card.email}</p> : null}
-        {card.phone ? <p className="phone">{card.phone}</p> : null}
-        {card.phone2 ? <p className="phone">{card.phone2}</p> : null}
+        {card.email ? (
+          <div>
+            <img src="./icon-mail.svg" />
+            <p className="meta">{card.email}</p>
+          </div>
+        ) : null}
+        {card.phone ? (
+          <div>
+            <img src="./icon-phone-ring.svg" />
+            <p className="meta">{card.phone}</p>
+          </div>
+        ) : null}
+        {card.phone2 ? (
+          <div>
+            <img src="./icon-phone-ring.svg" />
+            <p className="meta">{card.phone2}</p>
+          </div>
+        ) : null}
       </Meta>
     </Wrapper>
   );

@@ -3,13 +3,11 @@ import DynamicComponent from "../components/DynamicComponent";
 import useStoryblok from "../lib/storyblok-hook";
 import Head from "next/head";
 
-
-
-export default function Home({ story, preview,dataList,dataAuthors }) {
+export default function Home({ story, preview, dataList, dataAuthors }) {
   story = useStoryblok(story, preview);
   return (
     <>
-          <Head>
+      <Head>
         <title>Droszków</title>
         <link rel="icon" href="/favicon.png" />
         <meta property="og:url" content={`https://droszkow.pl`} />
@@ -22,7 +20,12 @@ export default function Home({ story, preview,dataList,dataAuthors }) {
       </Head>
       {story && story.content.body
         ? story.content.body.map((blok) => (
-            <DynamicComponent blok={blok} key={blok._uid} dataList={dataList} dataAuthors={dataAuthors}/>
+            <DynamicComponent
+              blok={blok}
+              key={blok._uid}
+              dataList={dataList}
+              dataAuthors={dataAuthors}
+            />
           ))
         : null}
     </>
@@ -36,25 +39,31 @@ export async function getStaticProps(context) {
   };
   let paramsDataList = {
     version: "published", // or 'published'
-    per_page: 6
+    per_page: 6,
   };
 
   if (context.preview) {
     params.version = "draft";
     params.cv = Date.now();
   }
-  
+
   let { data } = await Storyblok.get(`cdn/stories/${slug}`, params);
-  
-  let dataList  = await Storyblok.get(`cdn/stories/?starts_with=post/`, paramsDataList);
-  let dataAuthors  = await Storyblok.get(`cdn/stories/?starts_with=authors/`, params);
+
+  let dataList = await Storyblok.get(
+    `cdn/stories/?starts_with=post/`,
+    paramsDataList
+  );
+  let dataAuthors = await Storyblok.get(
+    `cdn/stories/?starts_with=authors/`,
+    params
+  );
 
   return {
     props: {
       story: data ? data.story : false,
       preview: context.preview || false,
       dataList: dataList.data ? dataList.data.stories : false,
-      dataAuthors: dataAuthors.data ? dataAuthors.data.stories : false
+      dataAuthors: dataAuthors.data ? dataAuthors.data.stories : false,
     },
     revalidate: 10,
   };
