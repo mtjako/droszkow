@@ -4,6 +4,7 @@ import DynamicComponent from "../../components/DynamicComponent";
 import styled from "styled-components";
 import Image from "next/image";
 import Head from "next/head";
+import { lightTheme } from "../../styles/theme";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -33,6 +34,7 @@ const WrapperImg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 32px;
   p{
     font-weight: bold;
     font-size: 44px;
@@ -53,7 +55,8 @@ const Content = styled.div`
     width: 100%;
   }
   & > p {
-    padding: 16px 0 32px;
+    margin: 16px 0 0;
+    text-align: justify;
   }
   li::marker {
     color: #999;

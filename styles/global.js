@@ -44,8 +44,30 @@ export const GlobalStyles = createGlobalStyle`
     }
     .meta{
         font-size: 16px;
-        font-weight: 900;
+        font-weight: 700;
         color: ${({ theme }) => theme.grey500};
+    }
+    a{
+        font-weight: 600;
+        color: ${({ theme }) => theme.grey600};
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: -5px;
+            width: calc(100% + 10px);
+            height: 15%;
+            z-index: -1;
+            background-color: ${({ theme }) => theme.grey100};
+            transition: all 0.1s linear;
+        }
+        &:hover::before{
+            height: 50%;
+        }
     }
     
     /* LAYOUT */

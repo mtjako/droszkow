@@ -23,9 +23,12 @@ const Title = styled.h3`
 `;
 
 const Description = styled.p`
-  opacity: 0.8;
-  font-weight: 600;
   text-align: justify;
+`;
+
+const DescriptionMeta = styled.p`
+  text-align: justify;
+  margin-top: 8px;
 `;
 
 const PriceList = styled.table`
@@ -121,6 +124,7 @@ export const Pricing = ({ blok }) => {
       <TextWrap>
         <Title>{blok.title}</Title>
         <Description>{blok.description}</Description>
+        <DescriptionMeta className="meta">{blok.description_meta}</DescriptionMeta>
       </TextWrap>
       <PriceList>
         <tr>
