@@ -4,6 +4,9 @@ import { Hero } from "./Hero";
 import { Pricing } from "./Pricing";
 import { Contact } from "./Contact";
 import { ArticlesList } from "./ArticlesList";
+import { Schedule } from "./Schedule";
+import { Timeline } from "./Timeline/Timeline";
+import { Point } from "./Timeline/Point";
 
 const Components = {
   teaser: Teaser,
@@ -11,6 +14,9 @@ const Components = {
   pricing: Pricing,
   contact: Contact,
   articleslist: ArticlesList,
+  schedule: Schedule,
+  timeline: Timeline,
+  point: Point,
 };
 
 const DynamicComponent = ({ blok,dataList,dataAuthors }) => {
