@@ -11,7 +11,6 @@ const Wrapper = styled.ul`
 `;
 
 export const Timeline = ({blok}) => {
-    console.log('Timeline: ', blok);
   return (
     <Wrapper>
         <h2>{blok.header}</h2>

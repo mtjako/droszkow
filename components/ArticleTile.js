@@ -1,11 +1,16 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
+import {lightTheme} from "../styles/theme";
 
 const Wrapper = styled.div`
   width: 100%;
-  border: 4px solid #ccc;
   cursor: pointer;
+  border: 2px solid ${({ theme }) => theme.grey100};
+  box-shadow: 0px 50px 60px rgb(0 0 0 / 5%);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.25s linear;
 `;
 
 const WrapperImg = styled.div`
@@ -23,9 +28,18 @@ const Avatar = styled.div`
   height: 40px;
   border-radius: 50%;
   margin-right: 8px;
-  border: 4px solid #222;
   overflow: hidden;
-  background-color: #ccc;
+  position: relative;
+  &::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px ${({ theme }) => theme.grey900 + '44'};
+  }
 `;
 
 const WrapperMeta = styled.div`
@@ -57,7 +71,6 @@ export const ArticleTile = ({ data, dataAuthors }) => {
       : new Date(data.first_published_at).getMonth() + 1
   }.${new Date(data.first_published_at).getFullYear()}`;
   const theAuthor = dataAuthors.find((e) => (e = data.content.author));
-
   return (
     <Link href={`/${data.full_slug}`}>
       <Wrapper>

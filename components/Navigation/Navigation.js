@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Logo } from "./Logo";
 import { ModeSwitch } from "./ModeSwitch";
 import {lightTheme} from "../../styles/theme";
-import Link from 'next/link';
 import { useState } from "react";
 
 
@@ -38,6 +37,12 @@ const Menu = styled.div`
   display: none;
   @media(min-width: 600px){
     display: flex;
+  }
+  a{
+    color: inherit;
+    &::before{
+      display: none;
+    }
   }
 `;
 
@@ -94,9 +99,8 @@ const HamMenuItem = styled.div`
 export const Navigation = ({ theme, toggleTheme }) => {
   const [open, setOpen] = useState(false);
   const menuData = [
-    {name: 'Świetlica', url: '/swietlica'},
-    {name: 'Turystyka', url: '/turystyka'},
-    {name: 'Obwodnica', url: '/obwodnica'},
+    {name: 'Świetlica', url: 'swietlica'},
+    {name: 'Obwodnica', url: 'obwodnica'},
   ];
   return (
     <>
@@ -107,13 +111,13 @@ export const Navigation = ({ theme, toggleTheme }) => {
           <ModeSwitch theme={theme} toggleTheme={toggleTheme} />
         </Wrap>
         <Menu>
-          {menuData.map(item=><Link key={item.name} href={item.url}><MenuItem>{item.name}</MenuItem></Link>)}
+          {menuData.map(item=><a key={item.name} href={item.url}><MenuItem>{item.name}</MenuItem></a>)}
         </Menu>
         <HamBtn onClick={()=>setOpen(!open)}/>
       </Wrapper>
     </Nav>
     <HamMenu display={open}>
-    {menuData.map(item=><Link key={item.name} href={item.url}><HamMenuItem onClick={()=>setOpen(!open)}>{item.name}</HamMenuItem></Link>)}
+    {menuData.map(item=><a key={item.name} href={item.url}><HamMenuItem onClick={()=>setOpen(!open)}>{item.name}</HamMenuItem></a>)}
     </HamMenu>
     </>
   );

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
+import {lightTheme} from "../styles/theme";
 
 const Wrapper = styled.div`
   display: flex;
@@ -32,9 +33,18 @@ const Avatar = styled.div`
   height: 40px;
   border-radius: 50%;
   margin-right: 8px;
-  border: 4px solid #222;
   overflow: hidden;
-  background-color: #ccc;
+  position: relative;
+  &::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px ${({ theme }) => theme.grey900 + '44'};
+  }
 `;
 
 export const ContactCard = ({ card }) => {

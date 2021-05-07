@@ -8,7 +8,6 @@ const Wrapper = styled.div`
   margin: 0 auto;
   display: grid;
   grid-column-gap: 24px;
-  grid-row-gap: 12px;
   grid-template-columns: repeat(1, 1fr);
   @media (min-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
@@ -20,6 +19,13 @@ const Wrapper = styled.div`
 
 const Title = styled.h3`
   padding: 16px 0;
+  grid-column: span 1;
+  @media (min-width: 600px) {
+    grid-column: span 2;
+  }
+  @media (min-width: 900px) {
+    grid-column: span 3;
+  }
 `;
 
 const Description = styled.p`
@@ -34,17 +40,19 @@ const DescriptionMeta = styled.p`
 const PriceList = styled.table`
   width: 100%;
   grid-column: span 1;
+  margin-top: 24px;
   @media (min-width: 600px) {
     grid-column: span 2;
   }
   @media (min-width: 900px) {
     grid-column: span 2;
+    margin-top: 0;
   }
   border-collapse: collapse;
   align-self: center;
   tr {
     transition: border 0.25s linear 0.25s;
-    border-bottom: 4px solid #ccc;
+    border-bottom: 2px solid #ccc;
     &:last-of-type {
       border-bottom: none;
     }
@@ -58,7 +66,7 @@ const PriceList = styled.table`
         padding: 8px 12px;
       }
       transition: border 0.25s linear 0.25s;
-      border-left: 4px solid #ccc;
+      border-left: 2px solid #ccc;
       &:first-of-type {
         border-left: none;
       }
@@ -72,7 +80,7 @@ const PriceList = styled.table`
       padding: 12px;
       font-size: 16px;
       transition: border 0.25s linear 0.25s;
-      border-left: 4px solid #ccc;
+      border-left: 2px solid #ccc;
 
       &:first-of-type {
         padding: 12px 12px 12px 0;
@@ -121,8 +129,8 @@ export const Pricing = ({ blok }) => {
         />
       </ImageWrap>
 
-      <TextWrap>
         <Title>{blok.title}</Title>
+      <TextWrap>
         <Description>{blok.description}</Description>
         <DescriptionMeta className="meta">{blok.description_meta}</DescriptionMeta>
       </TextWrap>

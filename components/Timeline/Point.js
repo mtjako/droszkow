@@ -43,7 +43,6 @@ const Name = styled.p`
 `;
 
 export const Point = ({data}) => {
-    console.log('Point: ', data);
   return (
     <Wrapper date={Date.now() - Date.parse(data.date)>0}>
         <TimeDate>{data.date ? data.date.split(' ')[0] : 'Nieznana data'}</TimeDate>

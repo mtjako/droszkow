@@ -3,11 +3,12 @@ import {pallete} from "../styles/theme";
 
 const Wrapper = styled.footer`
   width: 100%;
-  height: 64px;
+  height: 68px;
   background-color: ${pallete.grey900};
   color: ${pallete.grey100};
   line-height: 64px;
   overflow: hidden;
+  border-top: 4px solid ${pallete.grey400};
 `;
 
 const InsideWrapper = styled.div`
