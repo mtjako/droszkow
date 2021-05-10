@@ -16,7 +16,7 @@ const DayWrap = styled.div`
 
 const Item = styled.div`
   display: grid;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   grid-column-gap: 16px;
   grid-template-columns: 50px 1fr;
   .time{
@@ -24,16 +24,16 @@ const Item = styled.div`
     grid-row: span 2;
     text-align: center;
     p{
-      font-weight: bold;
+      font-weight: 600;
       color: ${({ theme }) => theme.grey500};
     }
     p:nth-child(1){
       position: relative;
-      padding-bottom: 4px;
+
       &::after{
         content: '';
         position: absolute;
-        bottom: -1px;
+        bottom: -2px;
         left: 15px;
         width: 20px;
         height: 2px;
@@ -43,11 +43,15 @@ const Item = styled.div`
   }
   .title{
     grid-column: 2/3;
-    font-weight: bold;
+    font-weight: 700;
   }
   .room{
     grid-column: 2/3;
-    text-transform: uppercase;
+    font-weight: 600;
+    color: ${({ theme }) => theme.grey400};
+    &::first-letter{
+      text-transform: uppercase;
+    }
   }
 `;
 
@@ -65,7 +69,7 @@ const Day = ({ name,data }) => {
               if(i==1){
                 return(<p className="title" key={i}>{item.value}</p>)
               }
-              return(<p className="room meta" key={i}>{item.value}</p>)
+              return(<p className="room" key={i}>{item.value}</p>)
             })}
           </Item>
         ))}
