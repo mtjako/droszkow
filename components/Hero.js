@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import Image from "next/image";
+import {lightTheme} from "../styles/theme";
 
 const Wrapper = styled.div`
   position: relative;
-  margin-top: -68px;
+  margin-top: -64px;
   width: 100%;
   height: 100vh;
   @media (min-width: 550px) {
@@ -23,7 +24,7 @@ const Header = styled.h1`
   max-width: 1024px;
   padding: 24px;
   margin: 0 auto;
-  color: #eee;
+  color: ${lightTheme.grey050};
 `;
 
 const Overlay = styled.div`

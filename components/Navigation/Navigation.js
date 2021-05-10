@@ -9,7 +9,7 @@ const Nav = styled.nav`
   width: 100%;
   height: 64px;
   line-height: 64px;
-  color: #eee;
+  color: ${lightTheme.grey050};
   font-weight: bold;
   background-color: ${lightTheme.grey900 + 'cc'};
   backdrop-filter: saturate(180%) blur(20px);
@@ -108,7 +108,7 @@ export const Navigation = ({ theme, toggleTheme }) => {
       <Wrapper>
         <Wrap>
           <Logo />
-          <ModeSwitch theme={theme} toggleTheme={toggleTheme} />
+          <ModeSwitch toggleTheme={toggleTheme} />
         </Wrap>
         <Menu>
           {menuData.map(item=><a key={item.name} href={item.url}><MenuItem>{item.name}</MenuItem></a>)}

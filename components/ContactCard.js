@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
-import {lightTheme} from "../styles/theme";
+import { margins } from "../styles/theme";
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 const Header = styled.div``;
 
 const Meta = styled.div`
-  margin-top: 8px;
+  margin-top: ${margins.margin100};
   width: 100%;
   font-weight: 600;
   div {
@@ -32,18 +32,18 @@ const Avatar = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  margin-right: 8px;
+  margin-right: ${margins.margin100};
   overflow: hidden;
   position: relative;
-  &::after{
+  &::after {
     position: absolute;
     top: 0;
     left: 0;
-    content: '';
+    content: "";
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    box-shadow: inset 0 0 0 2px ${({ theme }) => theme.grey900 + '44'};
+    box-shadow: inset 0 0 0 2px ${({ theme }) => theme.grey900 + "44"};
   }
 `;
 

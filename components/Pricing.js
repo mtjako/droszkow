@@ -52,7 +52,7 @@ const PriceList = styled.table`
   align-self: center;
   tr {
     transition: border 0.25s linear 0.25s;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid ${({ theme }) => theme.grey200};
     &:last-of-type {
       border-bottom: none;
     }
@@ -66,7 +66,7 @@ const PriceList = styled.table`
         padding: 8px 12px;
       }
       transition: border 0.25s linear 0.25s;
-      border-left: 2px solid #ccc;
+      border-left: 2px solid ${({ theme }) => theme.grey200};
       &:first-of-type {
         border-left: none;
       }
@@ -80,7 +80,7 @@ const PriceList = styled.table`
       padding: 12px;
       font-size: 16px;
       transition: border 0.25s linear 0.25s;
-      border-left: 2px solid #ccc;
+      border-left: 2px solid ${({ theme }) => theme.grey200};
 
       &:first-of-type {
         padding: 12px 12px 12px 0;

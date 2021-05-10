@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import Image from "next/image";
+import {margins} from "../styles/theme"
 
 const Header = styled.h2`
   width: 100%;
+  margin-bottom: ${margins.margin200};
 `;
 
 export const SectionHeader = ({ text }) => {

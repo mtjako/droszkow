@@ -1,10 +1,8 @@
 import Storyblok from "../../lib/storyblok";
 import useStoryblok from "../../lib/storyblok-hook";
-import DynamicComponent from "../../components/DynamicComponent";
 import styled from "styled-components";
 import Image from "next/image";
 import Head from "next/head";
-import { lightTheme } from "../../styles/theme";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -30,7 +28,7 @@ const WrapperImg = styled.div`
   position: relative;
   width: 100%;
   height: 500px;
-  border: 4px solid #222;
+  border: 4px solid ${({ theme }) => theme.grey800};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +57,7 @@ const Content = styled.div`
     text-align: justify;
   }
   li::marker {
-    color: #999;
+    color: ${({ theme }) => theme.grey400};
   }
 `;
 

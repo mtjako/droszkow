@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Image from "next/image";
 import { SectionHeader } from "./SectionHeader";
 import { ContactCard } from "./ContactCard";
+import {margins} from "../styles/theme"
 
 const Wrapper = styled.div`
   max-width: 1024px;
@@ -11,8 +11,7 @@ const Wrapper = styled.div`
 
 const CardGrid = styled.div`
   display: grid;
-  grid-gap: 24px;
-  margin-top: 24px;
+  grid-gap: ${margins.margin400};
   grid-template-columns: repeat(1, 1fr);
   @media (min-width: 700px) {
     grid-template-columns: repeat(2, 1fr);

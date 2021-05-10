@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-import {lightTheme} from "../styles/theme";
+import {margins} from "../styles/theme"
 
 const Wrapper = styled.div`
   width: 100%;
@@ -27,7 +27,7 @@ const Avatar = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  margin-right: 8px;
+  margin-right: ${margins.margin100};
   overflow: hidden;
   position: relative;
   &::after{

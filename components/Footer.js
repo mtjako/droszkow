@@ -1,14 +1,15 @@
 import styled from "styled-components";
-import {pallete} from "../styles/theme";
+import {lightTheme} from "../styles/theme";
+import {margins} from "../styles/theme"
 
 const Wrapper = styled.footer`
   width: 100%;
   height: 68px;
-  background-color: ${pallete.grey900};
-  color: ${pallete.grey100};
+  background-color: ${lightTheme.grey900};
+  color: ${lightTheme.grey100};
   line-height: 64px;
   overflow: hidden;
-  border-top: 4px solid ${pallete.grey400};
+  border-top: 4px solid ${lightTheme.grey400};
 `;
 
 const InsideWrapper = styled.div`
@@ -31,12 +32,12 @@ const Overlay = styled.div`
   width: 100%;
   height: 100px;
   max-width: 976px;
-  margin: 64px auto 0;
+  margin: ${margins.margin700} auto 0;
 `;
 
 const Copyright = styled.p`
   font-weight: 600;
-  color: ${pallete.grey100} !important;
+  color: ${lightTheme.grey100} !important;
 `;
 
 const SocialBtn = styled.a`
@@ -52,10 +53,6 @@ const SocialBtn = styled.a`
   background-repeat: no-repeat;
   color: transparent;
   overflow: hidden;
-
-  &:focus {
-    border: 1px solid #fff;
-  }
 `;
 
 export const Footer = () => {
